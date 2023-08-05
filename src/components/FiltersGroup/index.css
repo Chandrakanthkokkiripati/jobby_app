@@ -1,0 +1,44 @@
+.filters-group-container {
+  margin-right: 20px;
+  width: 30%;
+  font-family: 'roboto';
+}
+.salary-range-list-container {
+  list-style-type: none;
+  padding-left: 0;
+}
+.salary-range-list-container input[type='radio'] {
+  width: 10px;
+  height: 10px;
+  margin-right: 15px;
+}
+.salary-range-list-container label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.salary-range-container h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.employment-type-list-container {
+  list-style-type: none;
+  padding-left: 0;
+}
+.employee-type-container h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.employment-type-list-container input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.employment-type-list-container label {
+  font-size: 16px;
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .filters-group-container {
+    width: 100%;
+  }
+}
