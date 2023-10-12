@@ -46,12 +46,12 @@ class ProfileCard extends Component {
 
   renderProfileView = () => {
     const {profileData} = this.state
-    const {name, profileImageUrl, shortBio} = profileData
+    const {profileImageUrl} = profileData
     return (
       <div className="profile-success-container">
         <img src={profileImageUrl} alt="profile" className="profile-img" />
-        <h1 className="profile-heading">{name}</h1>
-        <p className="profile-bio">{shortBio}</p>
+        <h1 className="profile-heading">Chandrakanth Kokkiripati</h1>
+        <p className="profile-bio">Passionate Frontend Developer</p>
       </div>
     )
   }

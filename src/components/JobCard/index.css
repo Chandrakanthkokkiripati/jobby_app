@@ -27,6 +27,7 @@
 .company-title {
   font-size: 23px;
   font-weight: 500;
+  color: #ffffff;
   margin: 0;
 }
 .rating-container {
@@ -42,6 +43,7 @@
 .rating {
   font-size: 18px;
   font-weight: 600;
+  color: #ffffff;
 }
 .location-package-container {
   display: flex;
@@ -66,15 +68,18 @@
 .icon {
   font-size: 25px;
   margin-right: 5px;
+  color: #ffffff;
 }
 
 .location-type-heading {
   font-size: 16px;
   font-weight: 500;
+  color: #f8fafc;
 }
 .package-per-annum {
   font-size: 20px;
   font-weight: 600;
+  color: #ffffff;
 }
 .horizontal-line {
   color: #2c364c;
@@ -83,8 +88,10 @@
 .description-heading {
   font-size: 20px;
   font-weight: 500;
+  color: #ffffff;
 }
 .job-description {
   font-size: 17px;
   font-weight: 600;
+  color: #f8fafc;
 }

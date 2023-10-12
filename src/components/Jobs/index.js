@@ -72,9 +72,9 @@ class Jobs extends Component {
   getJobDetails = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const jwtToken = Cookies.get('jwt_token')
-    const {employeeType, minimumSalary, searchInput} = this.state
-    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${employeeType.join()}&minimum_package=${minimumSalary}&search=${searchInput}`
-    console.log(apiUrl)
+    const {checkboxInputs, minimumSalary, searchInput} = this.state
+    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${checkboxInputs.join()}&minimum_package=${minimumSalary}&search=${searchInput}`
+    // console.log(apiUrl)
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -110,21 +110,34 @@ class Jobs extends Component {
   onChangeEmploymentType = event => {
     const {checkboxInputs} = this.state
     const inputNotInList = checkboxInputs.filter(
-      eachItem => eachItem === event.target.id,
+      eachItem => eachItem === eachItem.id,
     )
-    if (inputNotInList.length === 0) {
+    // console.log(inputNotInList)
+    if (!checkboxInputs.includes(event)) {
       this.setState(
         prevState => ({
-          checkboxInputs: [...prevState.checkboxInputs, event.target.id],
+          checkboxInputs: [...prevState.checkboxInputs, event],
         }),
         this.getJobDetails,
       )
     } else {
-      const filteredData = checkboxInputs.filter(
-        eachItem => eachItem !== event.target.id,
-      )
+      const filteredData = checkboxInputs.filter(eachItem => eachItem !== event)
       this.setState(() => ({checkboxInputs: filteredData}), this.getJobDetails)
     }
+    console.log(checkboxInputs)
+    // if (inputNotInList.length === 0) {
+    //   this.setState(
+    //     prevState => ({
+    //       checkboxInputs: [...prevState.checkboxInputs, event.target.id],
+    //     }),
+    //     this.getJobDetails,
+    //   )
+    // } else {
+    //   const filteredData = checkboxInputs.filter(
+    //     eachItem => eachItem !== event.target.id,
+    //   )
+    //   this.setState(() => ({checkboxInputs: filteredData}), this.getJobDetails)
+    // }
   }
 
   onChangeSalary = salary => {
